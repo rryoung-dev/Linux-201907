@@ -1,0 +1,17 @@
+#CC = gcc
+CC = arm-none-linux-gnueabi-gcc
+CFLAGS = -Wall
+OBJECTS = main.o hello.o
+
+armmaintest:$(OBJECTS)	
+	$(CC) $(CFLAGS) $(OBJECTS) -o $@
+
+main.o:main.c	
+	$(CC) $(CFLAGS) -c $<
+
+hello.o:hello.c	
+	$(CC) $(CFLAGS) -c $<
+
+
+clean:	
+	rm -rf *.o maintest
